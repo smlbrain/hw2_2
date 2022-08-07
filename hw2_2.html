@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <h1>แบบฟอร์มจองทัวร์</h1>
+    <form action="form-echo.php" method="get">
+        <fieldset>
+        <legend><b>ข้อมูลทั่วไป</b></legend>
+
+        <b>ชื่อ-สกุล:</b><br>
+        <input type="text" name="name" placeholder="กรอกชื่อ-สกุล" pattern="[A-za-z]" required>
+        <br>
+        <b>Email:</b><br>
+        <input type="text" name="email" pattern="(?=.*[@].*).*">
+        <br>
+        <b>โทรศัพท์:</b><br>
+        <input type="text" name="phonenumber" value="+66"><br>
+        <b>ที่อยู่:</b><br>
+        <textarea cols="45" rows="5"></textarea><br>
+        <b>รหัสไปรษณีย์: </b><input type="text" name="postnum" size="6" maxlength="5" pattern="[0-9]{1,5}"><br>
+        <b>รูปผู้จอง: </b><input type="file" name="pic">
+    </fieldset><br>
+
+    <fieldset>
+        <legend><b>ข้อมูลเข้าสู่ระบบ</b></legend>
+        <b>Username:</b><br>
+        <input type="text" name="username" ><br>
+        <em>ประกอบด้วยตัวเลข ตัวอักษร หรือ_ตั้งแต่ 8 ตัวขึ้นไป</em><br>
+        <b>password:</b><br>
+        <input type="password" name="password" pattern="(\w)*8"><br>
+        <em>ประกอบด้วยตัวอักขระอะไรก็ได้ 8 ตัวขึ้นไป</em>
+    </fieldset><br>
+
+    <fieldset>
+        <legend><b>ข้อมูลทัวร์ที่ต้องการ</b></legend>
+        <label>แพคเก็จทัวร์:
+            <select name="tour">
+                <option value="select" selected="selected">--select--</option>
+                <option value="USA">อเมริกา</option>
+                <option value="JAPAN">ญี่ปุ่น</option>
+                <option value="INDIA">อินเดีย</option>
+            </select>
+        </label><br>
+        วันที่เดินทาง: <input type="date" name="date"><br>
+        จำนวนผู้เดินทาง: <input type="number" name="tourist" pattern="[1-9]+"><br>
+        เน้นการท่องเที่ยวแบบใด?<br>
+            <input type="checkbox" name="interest" value="shopping">ชอปปิ้ง<br>
+            <input type="checkbox" name="interest" value="nature">ธรรมชาติ<br>
+            <input type="checkbox" name="interest" value="sea">ทะเล<br>
+               
+    </fieldset>
+    <br>
+    ยอมรับเงื่อนไขและข้อตกลง 
+    <input type="radio" name="check" value="agree" checked="checked"/> I agree 
+    <input type="radio" name="check" value="disagree" /> I disagree 
+    <input type="submit" name="sub" value="จอง"> 
+
+
+
+    </form>
+</body>
+
+</html>
